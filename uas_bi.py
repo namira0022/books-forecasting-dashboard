@@ -17,17 +17,9 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from sklearn.impute import SimpleImputer
 
-# Untuk Google Colab mount drive (jika dataset dari Google Drive)
-from google.colab import drive
-drive.mount('/content/drive')
+url = 'https://drive.google.com/file/d/1XdLK10gqj-wmkdBeBWcCn0in3gtnSZUc/view?usp=drive_link'
+df = pd.read_csv(url)
 
-# Jika ingin baca dari Google Drive, ganti path sesuai lokasi dataset di Drive
-# Contoh:
-# path = '/content/drive/MyDrive/Books_Data_Clean.csv'
-# df = pd.read_csv(path)
-
-# Namun karena kamu sudah upload file di /mnt/data, kita pakai itu langsung
-df = pd.read_csv('/content/drive/MyDrive/Books_Data_Clean.csv')
 
 # Step 2: Data Cleansing
 print("Data Awal:")
